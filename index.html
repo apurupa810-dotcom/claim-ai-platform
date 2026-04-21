@@ -15,14 +15,14 @@
 <body class="bg-slate-950 text-slate-200">
 
   <!-- Hero -->
-  <header class="hero-bg py-28 text-center">
+  <header class="hero-bg py-32 text-center">
     <div class="max-w-6xl mx-auto px-6">
       <h1 class="text-7xl font-bold">ClaimAI</h1>
       <p class="text-4xl mt-4 text-blue-400">AI-Powered Intelligent Claims Platform</p>
       <p class="mt-8 max-w-2xl mx-auto text-xl">Processing claims faster with Java • Spring Boot • AI • Azure</p>
       <div class="mt-12 flex justify-center gap-6">
-        <a href="#" class="bg-blue-600 hover:bg-blue-500 px-10 py-4 rounded-2xl text-lg font-semibold">Try Demo</a>
-        <a href="https://github.com/apurupa810-dotcom/claimai" target="_blank" class="border border-slate-400 hover:border-white px-10 py-4 rounded-2xl text-lg font-semibold">View on GitHub</a>
+        <a href="#demo" class="bg-blue-600 hover:bg-blue-500 px-10 py-4 rounded-2xl text-lg font-semibold">Try Demo</a>
+        <a href="https://github.com/apurupa810-dotcom/claim-ai-platform" target="_blank" class="border border-slate-400 hover:border-white px-10 py-4 rounded-2xl text-lg font-semibold">View on GitHub</a>
       </div>
     </div>
   </header>
@@ -34,68 +34,90 @@
       <div class="bg-slate-900 p-8 rounded-3xl card-hover">
         <i class="fas fa-brain text-5xl text-blue-400 mb-6"></i>
         <h3 class="text-2xl font-semibold mb-3">AI Claim Analyzer</h3>
-        <p class="text-slate-400">Upload a claim → AI instantly summarizes, detects anomalies, and suggests next steps using natural language processing.</p>
+        <p class="text-slate-400">Upload or describe a claim → AI instantly summarizes, detects anomalies, and suggests next steps.</p>
       </div>
       <div class="bg-slate-900 p-8 rounded-3xl card-hover">
         <i class="fas fa-shield-alt text-5xl text-emerald-400 mb-6"></i>
         <h3 class="text-2xl font-semibold mb-3">Fraud Detection</h3>
-        <p class="text-slate-400">Real-time ML model flags suspicious patterns based on historical data and compliance rules (PCI, PII, SOC2).</p>
+        <p class="text-slate-400">Real-time ML model flags suspicious patterns based on historical data and compliance rules.</p>
       </div>
       <div class="bg-slate-900 p-8 rounded-3xl card-hover">
         <i class="fas fa-rocket text-5xl text-amber-400 mb-6"></i>
         <h3 class="text-2xl font-semibold mb-3">Auto-Processing</h3>
-        <p class="text-slate-400">Spring Boot microservices + MuleSoft integration for instant routing to approval or investigation workflows.</p>
+        <p class="text-slate-400">Spring Boot microservices + MuleSoft integration for instant routing and approval workflows.</p>
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack -->
-  <section class="bg-slate-900 py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-semibold text-center mb-12">Built With</h2>
-      <div class="flex flex-wrap justify-center gap-8 text-lg">
-        <div class="bg-slate-800 px-8 py-4 rounded-2xl">Java 17 + Spring Boot</div>
-        <div class="bg-slate-800 px-8 py-4 rounded-2xl">React + TypeScript</div>
-        <div class="bg-slate-800 px-8 py-4 rounded-2xl">Tailwind CSS</div>
-        <div class="bg-slate-800 px-8 py-4 rounded-2xl">Azure AKS + Docker</div>
-        <div class="bg-slate-800 px-8 py-4 rounded-2xl">MuleSoft APIs</div>
-        <div class="bg-slate-800 px-8 py-4 rounded-2xl">OpenAI / LangChain</div>
-        <div class="bg-slate-800 px-8 py-4 rounded-2xl">RabbitMQ + Kafka</div>
-      </div>
-    </div>
-  </section>
+  <!-- Interactive Demo -->
+  <section id="demo" class="bg-slate-900 py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-semibold text-center mb-12">Try the AI Claim Analyzer</h2>
+      
+      <div class="bg-slate-800 rounded-3xl p-10">
+        <textarea id="claimInput" rows="6" 
+          class="w-full bg-slate-900 text-slate-200 p-6 rounded-2xl border border-slate-700 focus:border-blue-500 outline-none resize-none"
+          placeholder="Example: Patient underwent knee surgery after a car accident on March 15. Total billed amount $12,450. Insurance ID: INS-78492..."></textarea>
+        
+        <button onclick="analyzeClaim()" 
+          class="mt-6 w-full bg-blue-600 hover:bg-blue-500 py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3">
+          <i class="fas fa-magic"></i> Analyze Claim with AI
+        </button>
 
-  <!-- Demo Section -->
-  <section class="max-w-6xl mx-auto px-6 py-20 bg-slate-950">
-    <h2 class="text-4xl font-semibold text-center mb-12">Live Demo - AI Claim Analysis</h2>
-    <div class="bg-slate-900 p-10 rounded-3xl max-w-2xl mx-auto">
-      <p class="text-slate-400 mb-6">Try it: Paste a sample claim description</p>
-      <textarea id="claimInput" class="w-full h-32 bg-slate-800 text-slate-200 p-4 rounded-2xl" placeholder="Patient had knee surgery after car accident..."></textarea>
-      <button onclick="analyzeClaim()" class="mt-6 w-full bg-blue-600 hover:bg-blue-500 py-4 rounded-2xl font-semibold">Analyze with AI</button>
-      <div id="result" class="mt-8 hidden"></div>
+        <div id="result" class="mt-8 hidden bg-slate-900 border border-emerald-500 rounded-2xl p-8"></div>
+      </div>
     </div>
   </section>
 
   <footer class="bg-black py-12 text-center text-slate-400">
-    <p>Built by Apurupa Prathipati • Senior Full Stack Developer</p>
-    <p class="mt-4">Perfect for Banking • Healthcare • Ecommerce claims processing roles</p>
+    <p class="text-xl">Built by Apurupa Prathipati • Senior Full Stack Developer</p>
+    <p class="mt-2">Showcasing real-world experience from Navy Federal Credit Union & American Express</p>
   </footer>
 
   <script>
     function analyzeClaim() {
       const input = document.getElementById('claimInput').value.trim();
-      const result = document.getElementById('result');
+      const resultDiv = document.getElementById('result');
       
-      if (!input) return;
-      
-      result.classList.remove('hidden');
-      result.innerHTML = `
-        <div class="bg-emerald-900 p-6 rounded-2xl">
-          <p class="text-emerald-300 font-semibold">✅ AI Analysis Complete</p>
-          <p class="mt-4"><strong>Summary:</strong> ${input.substring(0, 80)}...</p>
-          <p class="mt-4"><strong>Fraud Risk:</strong> Low</p>
-          <p class="mt-4"><strong>Recommendation:</strong> Auto-approve with 92% confidence</p>
-          <p class="mt-4 text-xs text-slate-400">Powered by Spring Boot microservices + OpenAI</p>
+      if (!input) {
+        alert("Please enter a claim description");
+        return;
+      }
+
+      resultDiv.classList.remove('hidden');
+      resultDiv.innerHTML = `
+        <div class="space-y-6">
+          <div class="flex items-center gap-3 text-emerald-400">
+            <i class="fas fa-check-circle text-2xl"></i>
+            <span class="font-semibold">AI Analysis Complete (Simulated using Spring Boot + OpenAI-style model)</span>
+          </div>
+          
+          <div>
+            <p class="text-slate-400 font-medium">Claim Summary:</p>
+            <p class="text-slate-200 mt-1">${input.substring(0, 120)}${input.length > 120 ? '...' : ''}</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-slate-950 p-5 rounded-2xl">
+              <p class="text-emerald-400 text-sm">Fraud Risk</p>
+              <p class="text-3xl font-bold text-emerald-400">Low (8%)</p>
+            </div>
+            <div class="bg-slate-950 p-5 rounded-2xl">
+              <p class="text-amber-400 text-sm">Auto-Approval Score</p>
+              <p class="text-3xl font-bold text-amber-400">92%</p>
+            </div>
+            <div class="bg-slate-950 p-5 rounded-2xl">
+              <p class="text-blue-400 text-sm">Recommended Action</p>
+              <p class="text-3xl font-bold text-blue-400">Approve</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6 rounded-2xl text-sm">
+            <strong>Key Insights:</strong><br>
+            • Matches standard knee surgery procedure codes<br>
+            • No duplicate claims detected<br>
+            • Member history shows consistent coverage
+          </div>
         </div>
       `;
     }
