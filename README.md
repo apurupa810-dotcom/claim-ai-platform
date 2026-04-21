@@ -1,62 +1,58 @@
 # ClaimAI - AI-Powered Intelligent Claims Platform
 
-**Modern AI-driven claims processing system** built to demonstrate enterprise-grade architecture for **Healthcare Insurance, Banking, and Ecommerce** domains.
+**Modern AI-driven claims processing system** designed for **Healthcare Insurance, Banking, and Ecommerce** domains.
 
-Live Demo: https://apurupa810-dotcom.github.io/claim-ai-platform/
+![ClaimAI Demo](https://apurupa810-dotcom.github.io/claim-ai-platform/)
 
-## 🎯 Project Goal
+## 🎯 Project Overview
 
-This project showcases my expertise as a **Senior Full Stack Developer** by building a realistic, production-ready claims processing platform that combines:
+ClaimAI is a full-stack demonstration project that showcases my expertise in building enterprise-grade, AI-enhanced claims processing systems — similar to the ones I worked on at **Navy Federal Credit Union** and **American Express**.
 
-- **Backend**: Java + Spring Boot microservices
-- **Frontend**: Modern React + Tailwind CSS
-- **AI/ML**: Claim analysis, fraud detection, and intelligent recommendations
-- **Cloud & Integration**: Azure AKS, Docker, MuleSoft-style API orchestration
+It combines modern backend technologies with intelligent AI features to process claims faster, detect fraud, and automate workflows.
+
+**Live Demo:** [https://apurupa810-dotcom.github.io/claim-ai-platform/](https://apurupa810-dotcom.github.io/claim-ai-platform/)
 
 ## ✨ Key Features
 
-- **AI Claim Analyzer** – Instant summarization and key entity extraction
-- **Real-time Fraud Detection** – Flags suspicious patterns with risk scoring
-- **Auto-Processing Engine** – Intelligent routing and approval recommendations
-- **Modern Dashboard** – Clean, responsive UI with dark theme
-- **Enterprise Compliance** – Built with PCI, PII, and SOC2 principles in mind
+- **AI Claim Analyzer** — Instant summarization and entity extraction using natural language processing
+- **Real-time Fraud Detection** — ML-based risk scoring and anomaly detection
+- **Auto-Processing Engine** — Intelligent routing and approval recommendations
+- **Modern Responsive UI** — Clean, dark-themed dashboard built with Tailwind CSS
+- **Enterprise Compliance Focus** — Designed with PCI, PII, and SOC2 principles in mind
 
 ## 🛠️ Technology Stack
 
-### Backend
-- Java 17
-- Spring Boot 4.x
-- Spring Cloud
-- MuleSoft / REST APIs
-- RabbitMQ or Kafka (event-driven)
+- **Backend**: Java 17, Spring Boot, Spring Cloud, MuleSoft-style APIs
+- **Frontend**: React + TypeScript, Tailwind CSS
+- **Cloud & DevOps**: Azure AKS, Docker, Helm
+- **Messaging**: RabbitMQ / Kafka (event-driven architecture)
+- **AI/ML**: Simulated OpenAI / LangChain integration for claim analysis
+- **Testing & Tools**: Postman, Gradle, Azure AI Services
 
-### Frontend
-- React.js + TypeScript
-- Tailwind CSS
-- Responsive design
+## 🏗️ Architecture Highlights
 
-### Cloud & DevOps
-- Azure Kubernetes Service (AKS)
-- Docker & Helm
-- Azure AI Services
-- CI/CD with GitHub Actions / Azure DevOps
+- Microservices architecture using **Spring Boot**
+- Event-driven design with messaging queues
+- Secure API layer with OAuth2/OIDC patterns
+- Containerized deployment ready for **Azure Kubernetes Service (AKS)**
+- AI-powered decision engine for faster claim processing
 
-### AI/ML
-- OpenAI / LangChain style integration (simulated)
-- Natural Language Processing for claim analysis
-- Simple ML-based fraud detection model
+## 📈 Why This Project Matters
 
-## 📋 My Real-World Experience Reflected
+This project directly reflects my real-world experience:
+- Claims platform migration and MuleSoft API development at **Navy Federal Credit Union**
+- Interactive dashboards and payment workflows at **American Express**
+- Modern frontend architecture at **Little Caesars**
 
-This project is heavily inspired by my actual work at:
-- **Navy Federal Credit Union** – Claims platform migration (PCF → AKS) + MuleSoft APIs
-- **American Express** – Dispute and payment processing workflows
-- **Little Caesars & Cox** – Modern frontend architecture and microservices
+It demonstrates my ability to build scalable, AI-enhanced solutions that solve actual business problems in regulated industries.
 
-## 🚀 How to Run Locally
+## 📬 Connect With Me
 
-```bash
-# Clone the repo
-git clone https://github.com/apurupa810-dotcom/claim-ai-platform.git
+- **Email**: apurupa810@gmail.com
+- **LinkedIn**: [Apurupa Prathipati](https://www.linkedin.com/in/rupa-p-75b502178/)
+- **Main Portfolio**: [View Portfolio](https://apurupa810-dotcom.github.io/apurupa-portfolio/)
 
-# Open index.html in browser (frontend demo)
+---
+
+**Built with passion by Apurupa Prathipati**  
+Senior Full Stack Developer | 10+ years in Enterprise Applications & Cloud-Native Systems
