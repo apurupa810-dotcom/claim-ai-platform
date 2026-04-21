@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClaimAI - AI-Powered Claims Platform</title>
+  <title>ClaimAI - AI-Powered Intelligent Claims Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; }
     .hero-bg { 
-      background: linear-gradient(135deg, #0a1428 0%, #1e3a8a 50%, #312e81 100%); 
+      background: linear-gradient(135deg, #0a1428 0%, #1e3a8a 60%, #312e81 100%); 
     }
     .card-hover:hover { 
       transform: translateY(-10px); 
-      box-shadow: 0 30px 60px -15px rgb(30 58 138 / 0.5); 
+      box-shadow: 0 30px 60px -15px rgb(30 58 138 / 0.6); 
     }
-    .demo-result { animation: fadeIn 0.6s ease; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-200">
 
   <!-- Hero -->
-  <header class="hero-bg py-32 text-center relative overflow-hidden">
+  <header class="hero-bg py-32 text-center">
     <div class="max-w-6xl mx-auto px-6">
       <h1 class="text-7xl font-bold tracking-tighter">ClaimAI</h1>
       <p class="text-4xl mt-4 text-blue-400">AI-Powered Intelligent Claims Platform</p>
       <p class="mt-8 max-w-2xl mx-auto text-xl text-slate-300">
-        Processing claims 10x faster with <strong>Java • Spring Boot • AI • Azure</strong>
+        Processing claims faster with <strong>Java • Spring Boot • AI • Azure</strong>
       </p>
       <div class="mt-12 flex justify-center gap-6">
         <button onclick="showDemo()" 
@@ -48,12 +47,12 @@
       <div class="bg-slate-900 p-8 rounded-3xl card-hover">
         <i class="fas fa-brain text-6xl text-blue-400 mb-6"></i>
         <h3 class="text-2xl font-semibold mb-3">AI Claim Analyzer</h3>
-        <p class="text-slate-400">Instantly summarizes claims, extracts key information, and suggests actions using advanced NLP.</p>
+        <p class="text-slate-400">Instantly summarizes claims, extracts key information, and provides intelligent recommendations.</p>
       </div>
       <div class="bg-slate-900 p-8 rounded-3xl card-hover">
         <i class="fas fa-shield-alt text-6xl text-emerald-400 mb-6"></i>
         <h3 class="text-2xl font-semibold mb-3">Fraud Detection</h3>
-        <p class="text-slate-400">Real-time ML model flags suspicious patterns based on historical claims and compliance rules.</p>
+        <p class="text-slate-400">Real-time ML model flags suspicious patterns based on historical data and compliance rules.</p>
       </div>
       <div class="bg-slate-900 p-8 rounded-3xl card-hover">
         <i class="fas fa-rocket text-6xl text-amber-400 mb-6"></i>
@@ -63,41 +62,46 @@
     </div>
   </section>
 
-  <!-- Enhanced Demo -->
+  <!-- Enhanced AI Demo -->
   <section class="bg-slate-900 py-20">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-semibold text-center mb-12">Try the AI Demo</h2>
-      <div class="bg-slate-800 p-10 rounded-3xl">
-        <textarea id="claimInput" rows="4" 
-          class="w-full bg-slate-900 text-slate-200 p-6 rounded-2xl border border-slate-700 focus:border-blue-500 outline-none"
+      <h2 class="text-4xl font-semibold text-center mb-4">Try the AI Demo</h2>
+      <p class="text-center text-slate-400 mb-12">Simulating real-time intelligent claim analysis</p>
+      
+      <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700">
+        <textarea id="claimInput" rows="5" 
+          class="w-full bg-slate-900 border border-slate-600 focus:border-blue-500 rounded-2xl p-6 text-slate-200 placeholder-slate-500 resize-y"
           placeholder="Example: Patient underwent knee surgery after a car accident on March 15. Total billed amount $12,450..."></textarea>
         
         <button onclick="analyzeClaim()" 
-                class="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 py-5 rounded-2xl font-semibold text-lg">
+                class="mt-8 w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3">
+          <i class="fas fa-sparkles"></i>
           Analyze Claim with AI
         </button>
 
-        <div id="result" class="mt-8 hidden demo-result"></div>
+        <div id="result" class="mt-10 hidden"></div>
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack -->
+  <!-- Technologies -->
   <section class="max-w-6xl mx-auto px-6 py-20">
     <h2 class="text-4xl font-semibold text-center mb-12">Technologies Used</h2>
-    <div class="flex flex-wrap justify-center gap-4 text-lg">
-      <span class="bg-slate-800 px-6 py-3 rounded-2xl">Java 17 + Spring Boot</span>
-      <span class="bg-slate-800 px-6 py-3 rounded-2xl">React + TypeScript</span>
-      <span class="bg-slate-800 px-6 py-3 rounded-2xl">Azure AKS + Docker</span>
-      <span class="bg-slate-800 px-6 py-3 rounded-2xl">MuleSoft APIs</span>
-      <span class="bg-slate-800 px-6 py-3 rounded-2xl">RabbitMQ / Kafka</span>
-      <span class="bg-slate-800 px-6 py-3 rounded-2xl">OpenAI / LangChain</span>
+    <div class="flex flex-wrap justify-center gap-4">
+      <span class="bg-slate-800 px-6 py-3 rounded-2xl text-sm">Java 17 + Spring Boot</span>
+      <span class="bg-slate-800 px-6 py-3 rounded-2xl text-sm">React + TypeScript</span>
+      <span class="bg-slate-800 px-6 py-3 rounded-2xl text-sm">Azure AKS + Docker</span>
+      <span class="bg-slate-800 px-6 py-3 rounded-2xl text-sm">MuleSoft APIs</span>
+      <span class="bg-slate-800 px-6 py-3 rounded-2xl text-sm">RabbitMQ / Kafka</span>
+      <span class="bg-slate-800 px-6 py-3 rounded-2xl text-sm">AI/ML Integration</span>
     </div>
   </section>
 
-  <footer class="bg-black py-12 text-center">
-    <p class="text-xl">Built by Apurupa Prathipati • Senior Full Stack Developer</p>
-    <p class="mt-4 text-slate-400">Ideal for Healthcare Insurance, Banking Claims, and Ecommerce Refund Systems</p>
+  <!-- Footer -->
+  <footer class="bg-black py-16 text-center text-slate-400">
+    <p class="text-xl">Built by <strong class="text-white">Apurupa Prathipati</strong> — Senior Full Stack Developer</p>
+    <p class="mt-4">Demonstrating real-world expertise in Banking, Healthcare Insurance & Ecommerce claims systems</p>
+    <p class="mt-8 text-sm">© 2026 Apurupa Prathipati</p>
   </footer>
 
   <script>
@@ -106,37 +110,54 @@
       const resultDiv = document.getElementById('result');
       
       if (!input) {
-        alert("Please enter a claim description");
+        alert("Please enter a claim description to analyze.");
         return;
       }
 
       resultDiv.classList.remove('hidden');
       resultDiv.innerHTML = `
-        <div class="bg-emerald-950 border border-emerald-700 p-8 rounded-3xl">
-          <div class="flex items-center gap-3 mb-6">
-            <i class="fas fa-check-circle text-3xl text-emerald-400"></i>
-            <span class="text-emerald-400 font-semibold text-xl">AI Analysis Complete</span>
-          </div>
-          <p class="text-slate-300"><strong>Claim Summary:</strong> ${input.substring(0, 120)}${input.length > 120 ? '...' : ''}</p>
-          <div class="grid grid-cols-2 gap-6 mt-8">
+        <div class="bg-emerald-900/80 border border-emerald-700 p-8 rounded-3xl">
+          <div class="flex items-center gap-4 mb-6">
+            <i class="fas fa-check-circle text-4xl text-emerald-400"></i>
             <div>
-              <p class="text-sm text-slate-400">Fraud Risk Score</p>
-              <p class="text-3xl font-bold text-emerald-400">8%</p>
-            </div>
-            <div>
-              <p class="text-sm text-slate-400">Auto-Approval Confidence</p>
-              <p class="text-3xl font-bold text-blue-400">94%</p>
+              <p class="text-emerald-300 font-semibold text-xl">AI Analysis Complete</p>
+              <p class="text-xs text-slate-400">Processed in 0.8 seconds using Spring Boot + Azure AI</p>
             </div>
           </div>
-          <p class="mt-8 text-slate-400">Recommendation: <span class="text-emerald-400 font-medium">Auto-Approve with manual review for high-value items</span></p>
-          <p class="text-xs text-slate-500 mt-6">Simulated using Spring Boot microservices + AI model</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-slate-950 p-5 rounded-2xl text-center">
+              <p class="text-xs text-slate-400">Fraud Risk</p>
+              <p class="text-4xl font-bold text-emerald-400">7%</p>
+            </div>
+            <div class="bg-slate-950 p-5 rounded-2xl text-center">
+              <p class="text-xs text-slate-400">Approval Confidence</p>
+              <p class="text-4xl font-bold text-blue-400">93%</p>
+            </div>
+            <div class="bg-slate-950 p-5 rounded-2xl text-center">
+              <p class="text-xs text-slate-400">Processing Time</p>
+              <p class="text-4xl font-bold text-amber-400">2 min</p>
+            </div>
+          </div>
+
+          <div class="mt-8 p-6 bg-slate-950 rounded-2xl border border-slate-700">
+            <p class="font-medium text-slate-300">Recommendation:</p>
+            <p class="text-emerald-400 mt-2">Auto-approve with minor manual review for high-value items. Route to payment processing system.</p>
+          </div>
+
+          <p class="text-xs text-slate-500 mt-8 text-center">
+            Simulated using Spring Boot microservices + AI model • Inspired by real claims work at Navy Federal Credit Union
+          </p>
         </div>
       `;
     }
 
     function showDemo() {
       document.getElementById('claimInput').focus();
-      window.scrollTo({ top: document.getElementById('claimInput').offsetTop - 100, behavior: 'smooth' });
+      window.scrollTo({ 
+        top: document.getElementById('claimInput').offsetTop - 100, 
+        behavior: 'smooth' 
+      });
     }
   </script>
 </body>
