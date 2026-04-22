@@ -15,6 +15,13 @@
       transform: translateY(-8px); 
       box-shadow: 0 25px 50px -12px rgb(165 243 252 / 0.3); 
     }
+    .loading {
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -73,7 +80,7 @@
           class="w-full bg-white border border-slate-300 focus:border-violet-500 rounded-2xl p-6 text-slate-800 placeholder-slate-400 resize-y"
           placeholder="Example: Patient underwent knee surgery after a car accident on March 15. Total billed amount $12,450..."></textarea>
         
-        <button onclick="analyzeClaim()" 
+        <button onclick="analyzeClaim()" id="analyzeBtn"
                 class="mt-8 w-full bg-black hover:bg-gray-800 text-white py-5 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3">
           <i class="fas fa-sparkles"></i>
           Analyze Claim with AI
@@ -107,54 +114,66 @@
   <script>
     function analyzeClaim() {
       const input = document.getElementById('claimInput').value.trim();
+      const btn = document.getElementById('analyzeBtn');
       const resultDiv = document.getElementById('result');
-      
+
       if (!input) {
         alert("Please enter a claim description to analyze.");
         return;
       }
 
-      resultDiv.classList.remove('hidden');
-      resultDiv.innerHTML = `
-        <div class="bg-emerald-50 border border-emerald-200 p-8 rounded-3xl">
-          <div class="flex items-center gap-4 mb-6">
-            <i class="fas fa-check-circle text-4xl text-emerald-500"></i>
-            <div>
-              <p class="text-emerald-600 font-semibold text-xl">AI Analysis Complete</p>
-              <p class="text-xs text-slate-500">Processed in 0.8 seconds</p>
-            </div>
-          </div>
-          
-          <div class="mt-4 p-5 bg-white rounded-2xl border border-slate-100">
-            <p class="text-sm text-slate-500 mb-2">You entered:</p>
-            <p class="text-slate-700 italic">"${input}"</p>
-          </div>
+      // Disable button and show loading
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fas fa-spinner loading mr-2"></i> Analyzing with AI...`;
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div class="bg-white p-5 rounded-2xl text-center border border-slate-100">
-              <p class="text-xs text-slate-500">Fraud Risk</p>
-              <p class="text-4xl font-bold text-emerald-500">7%</p>
+      // Simulate API call delay
+      setTimeout(() => {
+        resultDiv.classList.remove('hidden');
+        resultDiv.innerHTML = `
+          <div class="bg-emerald-50 border border-emerald-200 p-8 rounded-3xl">
+            <div class="flex items-center gap-4 mb-6">
+              <i class="fas fa-check-circle text-4xl text-emerald-500"></i>
+              <div>
+                <p class="text-emerald-600 font-semibold text-xl">AI Analysis Complete</p>
+                <p class="text-xs text-slate-500">Processed in 1.2 seconds</p>
+              </div>
             </div>
-            <div class="bg-white p-5 rounded-2xl text-center border border-slate-100">
-              <p class="text-xs text-slate-500">Approval Confidence</p>
-              <p class="text-4xl font-bold text-violet-600">93%</p>
+            
+            <div class="mt-4 p-5 bg-white rounded-2xl border border-slate-100">
+              <p class="text-sm text-slate-500 mb-2">Your Claim:</p>
+              <p class="text-slate-700 italic">"${input}"</p>
             </div>
-            <div class="bg-white p-5 rounded-2xl text-center border border-slate-100">
-              <p class="text-xs text-slate-500">Processing Time</p>
-              <p class="text-4xl font-bold text-amber-500">2 min</p>
-            </div>
-          </div>
 
-          <div class="mt-8 p-6 bg-white rounded-2xl border border-slate-100">
-            <p class="font-medium text-slate-700">Recommendation:</p>
-            <p class="text-emerald-600 mt-2">Auto-approve with minor manual review for high-value items. Route to payment processing.</p>
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div class="bg-white p-5 rounded-2xl text-center border border-slate-100">
+                <p class="text-xs text-slate-500">Fraud Risk</p>
+                <p class="text-4xl font-bold text-emerald-500">7%</p>
+              </div>
+              <div class="bg-white p-5 rounded-2xl text-center border border-slate-100">
+                <p class="text-xs text-slate-500">Approval Confidence</p>
+                <p class="text-4xl font-bold text-violet-600">93%</p>
+              </div>
+              <div class="bg-white p-5 rounded-2xl text-center border border-slate-100">
+                <p class="text-xs text-slate-500">Processing Time</p>
+                <p class="text-4xl font-bold text-amber-500">2 min</p>
+              </div>
+            </div>
 
-          <p class="text-xs text-slate-500 mt-8 text-center">
-            Simulated using Spring Boot microservices + AI model • Inspired by real claims work at Navy Federal Credit Union
-          </p>
-        </div>
-      `;
+            <div class="mt-8 p-6 bg-white rounded-2xl border border-slate-100">
+              <p class="font-medium text-slate-700">Recommendation:</p>
+              <p class="text-emerald-600 mt-2">Auto-approve with minor manual review for high-value items. Route to payment processing.</p>
+            </div>
+
+            <p class="text-xs text-slate-500 mt-8 text-center">
+              Simulated using Spring Boot microservices + AI model • Inspired by real claims work at Navy Federal Credit Union
+            </p>
+          </div>
+        `;
+
+        // Reset button
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fas fa-sparkles"></i> Analyze Claim with AI`;
+      }, 1500); // 1.5 second loading simulation
     }
 
     function showDemo() {
